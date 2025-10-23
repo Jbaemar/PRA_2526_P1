@@ -12,8 +12,13 @@ class ArrayList : public List<T> {
 		static const int MINSIZE = 2;
 		
 		void resize(int new_size){
-			
-		
+			T* new_arr = new T[new_size];
+			for (int i = 0; i < n; i++) {
+				new_arr[i] = arr[i];
+			}
+			delete[] arr;
+			arr = new_arr;
+			max = new_size + 5;
 		}
 
 	public:
