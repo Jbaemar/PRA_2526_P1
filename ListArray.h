@@ -104,14 +104,24 @@ class ListArray : public List<T> {
 		}
 		
 		T operator[](int pos){
-		
+			if(pos < 0 || pos > n-1){
+				throw out_of_range("Posicion no valida");
+			}
+			return arr[pos];
 		}
 
 		friend std::ostream& operator<<(std::ostream &out, const ListArray<T> &list){
+			out << "[";
+			for(int i = 0; i < list.n; i++){
+				out << list.arr[i];
+				if(i < list.n - 1){
+					out << ", ";
+				}
+			}
+			out << "]";
+			return out;
 
-
-		}	
-	
+		}
 
 
 
