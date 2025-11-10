@@ -120,7 +120,7 @@ class ListLinked : public List<T> {
             delete toDelete; // liberar memoria
             n--;
             return value;
-
+            
         }
 
         T get(int pos) override{//devuelve el elemento en la posicion pos.
